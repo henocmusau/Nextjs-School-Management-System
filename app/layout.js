@@ -1,3 +1,4 @@
+import LeftMenu from '@/components/LeftMenu'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex relative min-h-screen flex-wrap overflow-hidden">
+          <LeftMenu />
+          <section className="flex static flex-1 min-h-screen flex-col items-center justify-between">
+            {children}
+          </section>
+        </main>
+      </body>
     </html>
   )
 }
