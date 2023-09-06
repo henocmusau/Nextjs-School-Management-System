@@ -7,8 +7,8 @@ export const classes = {
 }
 
 export const navLinkClass = {
-    active: 'text-slate-800 px-4 py-3 rounded-full cursor-pointer bg-slate-500 hover:bg-blue-100 duration-300 flex items-center',
-    notActive: 'text-slate-800 px-4 py-3 rounded-full cursor-pointer hover:bg-blue-100 duration-300 flex items-center'
+    active: 'text-slate-800 border-t-2 border-gray-700 px-4 py-3 rounded-full cursor-pointer bg-slate-500 hover:bg-blue-100 duration-300 flex items-center',
+    notActive: 'text-slate-800 px-6 py-3 rounded-full cursor-pointer hover:bg-blue-100 duration-300 flex items-center'
 }
 
 export const navLinks = [
