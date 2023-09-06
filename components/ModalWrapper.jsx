@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import MyModal from './ModalOne'
 import ModalContent from './ModalContent'
 import useModal from '@/hooks/useModal'
 import Action from './Action'
