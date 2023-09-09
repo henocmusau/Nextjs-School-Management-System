@@ -7,25 +7,16 @@ import { AiOutlineCheck as CheckIcon } from 'react-icons/ai'
 // import Listbox from './ListBox'
 
 const promotions = [
-    { id: 0, name: '1ère Primaire' },
-    { id: 1, name: '2ème Primaire' },
-    { id: 2, name: '3ème Primaire' },
-    { id: 3, name: '4ème Primaire' },
-    { id: 4, name: '5ème Primaire' },
-    { id: 5, name: '6ème Primaire' },
+    { id: 0, name: 'Tous' },
+    { id: 1, name: '1ère Primaire' },
+    { id: 2, name: '2ème Primaire' },
+    { id: 3, name: '3ème Primaire' },
+    { id: 4, name: '4ème Primaire' },
+    { id: 5, name: '5ème Primaire' },
+    { id: 6, name: '6ème Primaire' },
 ]
 
-export default function StudentsFilters() {
-    const [select, setSelect] = useState(0)
-    const [query, setQuery] = useState('')
-
-    function handleChange(e) {
-        setQuery(e.target.value)
-    }
-
-    function handleSelectChange(e) {
-        setSelect(e.target.value)
-    }
+export default function StudentsFilters({ query, select, handleChange, handleSelectChange }) {
 
     return (
         <section className='bg-white text-slate-900 relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
