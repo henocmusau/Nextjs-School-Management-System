@@ -6,12 +6,13 @@ import { FiChevronDown as ChevronUpDownIcon } from 'react-icons/fi'
 import { AiOutlineCheck as CheckIcon } from 'react-icons/ai'
 
 const people = [
-    { id: 0, name: '1ère Primaire' },
-    { id: 1, name: '2eme Primaire' },
-    { id: 2, name: '3ème Primaire' },
-    { id: 3, name: '4ème Primaire' },
-    { id: 4, name: '5ème Primaire' },
-    { id: 5, name: '6ème Primaire' },
+    { id: 0, name: 'Tous' },
+    { id: 1, name: '1ère Primaire' },
+    { id: 2, name: '2eme Primaire' },
+    { id: 3, name: '3ème Primaire' },
+    { id: 4, name: '4ème Primaire' },
+    { id: 5, name: '5ème Primaire' },
+    { id: 6, name: '6ème Primaire' },
 ]
 
 export default function ListBox() {

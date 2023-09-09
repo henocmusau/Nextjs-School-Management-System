@@ -18,7 +18,7 @@
 
 body {
   color: @apply text-black;
-  background: @apply bg-slate-200;
+  /* background-color: @apply bg-slate-200; */
   /* linear-gradient(
       to bottom,
       transparent,
