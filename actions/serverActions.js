@@ -6,6 +6,6 @@ export async function getAllStudents() {
         // console.log(users)
         return users
     } catch (error) {
-        return 'Une erreur est survenue'
+        throw new Error('Une erreur est survenue')
     }
 }

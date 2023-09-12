@@ -2,12 +2,12 @@ import { Sequelize, DataType, DataTypes } from "sequelize";
 import mysql2 from 'mysql2'
 
 export const schoolXDB = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USERNAME,
-    process.env.DB_PASSWORD,
+    process.env.DB_NAME_DEV,
+    process.env.DB_USERNAME_DEV,
+    process.env.DB_PASSWORD_DEV,
     {
-        host: process.env.DB_HOST,
-        port: 3306,
+        host: process.env.DB_HOST_DEV,
+        port: process.env.DB_PORT_DEV,
         dialect: 'mysql',
         dialectModule: mysql2
     }
@@ -21,7 +21,7 @@ export const Student = schoolXDB.define('student', {
     },
     lastName: {
         type: DataTypes.STRING(50),
-        allowNull: false
+        allowNull: false,
     },
     middleName: {
         type: DataTypes.STRING(50),
@@ -29,7 +29,8 @@ export const Student = schoolXDB.define('student', {
     },
     firstName: {
         type: DataTypes.STRING(50),
-        allowNull: true
+        allowNull: true,
+        defaultValue: ''
     },
     fullName: {
         type: DataTypes.VIRTUAL,
@@ -39,4 +40,4 @@ export const Student = schoolXDB.define('student', {
     }
 })
 
-// await schoolXDB.sync({ force: true })
+// await schoolXDB.sync({ alter: true })

@@ -3,9 +3,9 @@ import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export default function ModalContent({ isOpen, closeModal, children }) {
+export default function ModalContent({ isOpen, closeModal, children, id }) {
     return (
-        <Transition appear show={isOpen} as={Fragment}>
+        <Transition appear show={isOpen} as={Fragment} key={id ? id : 0}>
             <Dialog as="div" className="relative z-10" onClose={closeModal}>
                 <Transition.Child
                     as={Fragment}
@@ -60,7 +60,7 @@ export default function ModalContent({ isOpen, closeModal, children }) {
                                         type="button"
                                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                         onClick={closeModal}
-                                    >
+                                    > 
                                         Got it, thanks!
                                     </button>
                                 </div> */}
