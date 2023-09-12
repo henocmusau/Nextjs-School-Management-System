@@ -13,7 +13,7 @@ export default function ModalWrapper() {
     <>
       <button onClick={openModal} className='rounded-full shadow-xl z-50 absolute right-4 bottom-20 md:right-20 p-6 h-16 w-16 bg-blue-700 hover:bg-blue-500 duration-300 text-white flex items-center justify-center text-2xl'>+</button>
       <ModalContent isOpen={isOpen} closeModal={closeModal} id='modal' >
-        <Action closeModal={closeModal} title='Nouveau paiement' link='/payment?new=1' icon={<AiOutlineBank />}>
+        <Action closeModal={closeModal} title='Nouveau paiement' link='/payments?new=1' icon={<AiOutlineBank />}>
           Enregistrer un nouveau paiement
         </Action>
         <Action closeModal={closeModal} title='Nouvel(le) élève' link='/students?new=1' icon={<AiOutlineUser />}>

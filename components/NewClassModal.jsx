@@ -4,12 +4,12 @@ import React from 'react'
 import ModalContent from './ModalContent'
 import useNewModal from '@/hooks/useNewModal'
 
-export default function NewStudentModal() {
+export default function NewClassModal() {
     const [showModal, closeModal] = useNewModal()
 
     return (
-        <ModalContent isOpen={showModal} title='Enregistrer nouvel élève' closeModal={closeModal} key={'lol'}>
-            NEW STUDENT jjjjj
+        <ModalContent isOpen={showModal} title='Enregistrer nouvelle promotion' closeModal={closeModal} key={'lol'}>
+            NEW Class
         </ModalContent>
     )
 }

@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export default function ModalContent({ isOpen, closeModal, children, id }) {
+export default function ModalContent({ isOpen, closeModal, children, id, title }) {
     return (
         <Transition appear show={isOpen} as={Fragment} key={id ? id : 0}>
             <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -38,17 +38,13 @@ export default function ModalContent({ isOpen, closeModal, children, id }) {
                                 >
                                     <AiOutlineClose />
                                 </button>
-                                {/* <Dialog.Title
+                                <Dialog.Title
                                     as="h3"
-                                    className="text-lg font-medium leading-6 text-gray-900"
+                                    className="text-lg mb-4 pb-2 font-medium leading-6 border-b border-gray-400 text-gray-900"
                                 >
-                                    Initier/Créer
-                                </Dialog.Title> */}
-                                <div className="my-4">
-                                    <p className="text-lg text-gray-500">
-                                        Selectionnez une action :
-                                    </p>
-                                </div>
+                                    {title ? title : 'Sélectionnez une action :'}
+                                </Dialog.Title>
+
                                 <div>
                                     {children}
                                 </div>

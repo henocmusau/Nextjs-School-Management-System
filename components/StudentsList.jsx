@@ -3,11 +3,9 @@ import React from 'react'
 import StudentRow from './StudentRow'
 import StudentsFilters from './StudentsFilters'
 import useStudentsFilter from '@/hooks/useStudentsFilter'
-import { useSearchParams } from 'next/navigation'
 
 export default function StudentsList({ students }) {
     const [query, select, handleChange, handleSelectChange, filteredStudents] = useStudentsFilter({ students })
-    const params = useSearchParams()
 
     return (
         <>
