@@ -19,7 +19,7 @@ const promotions = [
 export default function StudentsFilters({ query, select, handleChange, handleSelectChange }) {
 
     return (
-        <section className='bg-white text-slate-900 relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
+        <section className='bg-secondary relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
             <div className='relative basis-5/12 mr-6'>
                 <input
                     type='text'
@@ -32,7 +32,7 @@ export default function StudentsFilters({ query, select, handleChange, handleSel
                 />
                 <button
                     type="button"
-                    className="absolute left-0 top-0 my-0 h-full ml-2 text-slate-400"
+                    className="absolute left-0 top-0 my-0 h-full ml-2 text-secondary"
                 >
                     <AiOutlineSearch className='text-2xl' />
                 </button>

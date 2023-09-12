@@ -13,9 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex relative min-h-screen flex-wrap`}>
+      <body className={`${inter.className} flex relative min-h-screen flex-wrap text-primary`}>
         <LeftMenu />
-        <main className="bg-sky-50 max-h-screen overflow-y-auto flex flex-1 min-h-full flex-col items-center justify-between">
+        <main className="bg-primary max-h-screen overflow-y-auto flex flex-1 min-h-full flex-col items-center justify-between">
           {children}
           <ModalWrapper />
         </main>

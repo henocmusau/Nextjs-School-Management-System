@@ -11,7 +11,7 @@ export default function NavLink({ label, link, icon }) {
     return (
         <Link
             href={link}
-            className='text-slate-800 px-6 py-3 rounded-full cursor-pointer hover:bg-blue-100 duration-300 flex items-center'
+            className='px-6 py-3 rounded-full cursor-pointer hover:bg-blue-100 duration-300 flex items-center'
         >
             {icon}
             <span className='ml-2'>{label}</span>

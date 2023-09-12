@@ -2,6 +2,7 @@
 const nextConfig = {
     experimental: {
         serverComponentsExternalPackages: ['sequelize'],
+        serverActions: true
     }
 }
 

@@ -8,8 +8,8 @@ export default function Action({ title, icon, link, children, closeModal }) {
                 {icon}
             </span>
             <div>
-                <h2 className='font-semibold text-lg text-gray-700'>{title}</h2>
-                <p className='text-sm text-gray-500'>{children} </p>
+                <h2 className='font-semibold text-lg'>{title}</h2>
+                <p className='text-sm text-secondary'>{children} </p>
             </div>
         </Link>
     )

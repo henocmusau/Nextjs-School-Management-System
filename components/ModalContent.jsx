@@ -40,7 +40,7 @@ export default function ModalContent({ isOpen, closeModal, children, id, title }
                                 </button>
                                 <Dialog.Title
                                     as="h3"
-                                    className="text-lg mb-4 pb-2 font-medium leading-6 border-b border-gray-400 text-gray-900"
+                                    className="text-lg mb-8 mt-2 p-2 font-medium bg-sky-100 text-center rounded-lg"
                                 >
                                     {title ? title : 'Sélectionnez une action :'}
                                 </Dialog.Title>

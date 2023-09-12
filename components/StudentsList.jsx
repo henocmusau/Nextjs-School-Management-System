@@ -10,7 +10,7 @@ export default function StudentsList({ students }) {
     return (
         <>
             <StudentsFilters query={query} select={select} handleChange={handleChange} handleSelectChange={handleSelectChange} />
-            <section className='bg-white text-slate-900 rounded-b-xl shadow-lg w-full px-8 py-8'>
+            <section className='bg-secondary rounded-b-xl shadow-lg w-full px-8 py-8'>
                 <h2 className='pb-4 font-semibold text-lg ml-4 mb-4 border-b-4 border-slate-200'>Liste des élèves</h2>
                 <table className='text-left w-full border-collapse mt-4'>
                     <thead>
