@@ -1,10 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 export default function useStudentsFilter({ students }) {
     const [select, setSelect] = useState(0)
     const [query, setQuery] = useState('')
-    const [datas, setDatas] = useState(students)
 
     function handleChange(e) {
         setQuery(e.target.value)
@@ -14,7 +13,7 @@ export default function useStudentsFilter({ students }) {
         setSelect(e.target.value)
     }
 
-    const filteredStudents = datas?.filter((student) => {
+    const filteredStudents = students?.filter((student) => {
         return student?.fullName.toLowerCase().includes(query.toLowerCase())
             || student?.id.toString().toLowerCase().includes(query.toLowerCase())
     })

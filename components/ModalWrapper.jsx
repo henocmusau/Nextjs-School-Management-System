@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import ModalContent from './ModalContent'
 import useModal from '@/hooks/useModal'
 import Action from './Action'
-import { AiOutlineAudit, AiOutlineBank, AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineAudit, AiOutlineBank, AiOutlineUser, AiOutlineUsergroupAdd, AiOutlineBook } from 'react-icons/ai'
 
 export default function ModalWrapper() {
   const [isOpen, openModal, closeModal] = useModal()
@@ -21,6 +21,12 @@ export default function ModalWrapper() {
         </Action>
         <Action closeModal={closeModal} title='Nouveau professeur' link='/teachers?new=1' icon={<AiOutlineAudit />}>
           Enregistrer un nouveau professeur
+        </Action>
+        <Action closeModal={closeModal} title='Nouvelle classe' link='/classes?new=1' icon={<AiOutlineUsergroupAdd />}>
+          Créer une nouvelle classe
+        </Action>
+        <Action closeModal={closeModal} title='Nouveau cours' link='/courses?new=1' icon={<AiOutlineBook />}>
+          Créer un nouveau cours
         </Action>
       </ModalContent>
     </>

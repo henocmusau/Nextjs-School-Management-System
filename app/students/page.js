@@ -1,7 +1,7 @@
 import StudentsList from '@/components/StudentsList'
 import StudentsStats from '@/components/StudentsStats'
 import React from 'react'
-import { getAllStudents } from "@/actions/serverActions"
+import { getAllStudents } from "@/actions/studentsActions"
 import NewStudentModal from '@/components/NewStudentModal'
 
 export const metadata = {

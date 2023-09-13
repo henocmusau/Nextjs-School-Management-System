@@ -1,5 +1,5 @@
 'use server'
-import { Student } from '@/models/students'
+import { Student } from '@/models/relations'
 import { revalidatePath } from 'next/cache'
 
 export async function getAllStudents() {
@@ -19,7 +19,6 @@ export async function createNewStudent(formData) {
             firstName: formData.get('firstName'),
         })
         console.log(newStudent)
-        revalidatePath('/students')
         return { status: 1, message: 'Enregistré avec succes !' }
     } catch (error) {
         return { status: 0, message: 'Une erreur est survenue', error }

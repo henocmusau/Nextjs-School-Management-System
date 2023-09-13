@@ -3,6 +3,7 @@ import React from 'react'
 import StudentRow from './StudentRow'
 import StudentsFilters from './StudentsFilters'
 import useStudentsFilter from '@/hooks/useStudentsFilter'
+import SectionWrapper from './SectionWrapper'
 
 export default function StudentsList({ students }) {
     const [query, select, handleChange, handleSelectChange, filteredStudents] = useStudentsFilter({ students })
@@ -10,7 +11,7 @@ export default function StudentsList({ students }) {
     return (
         <>
             <StudentsFilters query={query} select={select} handleChange={handleChange} handleSelectChange={handleSelectChange} />
-            <section className='bg-secondary rounded-b-xl shadow-lg w-full px-8 py-8'>
+            <SectionWrapper>
                 <h2 className='pb-4 font-semibold text-lg ml-4 mb-4 border-b-4 border-slate-200'>Liste des élèves</h2>
                 <table className='text-left w-full border-collapse mt-4'>
                     <thead>
@@ -25,7 +26,7 @@ export default function StudentsList({ students }) {
                         ))}
                     </tbody>
                 </table>
-            </section>
+            </SectionWrapper>
         </>
     )
 }
