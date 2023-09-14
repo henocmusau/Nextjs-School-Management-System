@@ -19,7 +19,7 @@ const promotions = [
 export default function StudentsFilters({ query, select, handleChange, handleSelectChange }) {
 
     return (
-        <section className='bg-secondary relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
+        <section className='bg-secondary dark:bg-secondaryDark relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
             <div className='relative basis-5/12 mr-6'>
                 <input
                     type='text'

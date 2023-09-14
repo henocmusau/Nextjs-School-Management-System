@@ -1,6 +1,9 @@
 import LeftMenu from '@/components/LeftMenu'
 import './globals.css'
 import { Inter } from 'next/font/google'
+
+import { ThemeProvider } from '@/utils/context/theme'
+
 import ModalWrapper from '@/components/ModalWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,13 +16,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex relative min-h-screen flex-wrap text-primary`}>
-        <LeftMenu />
-        <main className="bg-primary max-h-screen overflow-y-auto flex flex-1 min-h-full flex-col items-center justify-between">
-          {children}
-          <ModalWrapper />
-        </main>
-      </body>
+      <ThemeProvider>
+        <body className={`${inter.className} flex relative min-h-screen flex-wrap text-primary dark:text-secondaryDark`}>
+          <LeftMenu />
+          <main className="bg-primary dark:bg-primaryDark max-h-screen overflow-y-auto flex flex-1 min-h-full flex-col items-center justify-between">
+            {children}
+            <ModalWrapper />
+          </main>
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
