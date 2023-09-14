@@ -24,6 +24,10 @@ module.exports = {
         'secondaryDark': '#25273c',
         'primary': '#f0f9ff',
         'secondary': '#fff'
+      },
+      backgroundImage: {
+        'firstImg': 'url(../assets/bg.svg)',
+        'secondImg': 'url(../assets/bg2.svg)',
       }
     },
   },
