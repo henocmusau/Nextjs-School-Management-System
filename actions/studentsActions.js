@@ -1,10 +1,16 @@
 'use server'
-import { Student } from '@/models/relations'
+import { Student, classModel } from '@/models/relations'
 import { revalidatePath } from 'next/cache'
 
 export async function getAllStudents() {
     try {
-        const users = await Student.findAll({ order: [['createdAt', 'DESC']] })
+        const users = await Student.findAll({
+            order: [['createdAt', 'DESC']],
+            include: {
+                model: classModel,
+                attributes: ['id', 'label']
+            },
+        })
         return users
     } catch (error) {
         return { message: 'Une erreur est survenue !' }
@@ -17,11 +23,11 @@ export async function createNewStudent(formData) {
             lastName: formData.get('lastName'),
             middleName: formData.get('middleName'),
             firstName: formData.get('firstName'),
+            classId: formData.get('class'),
         })
-        console.log(newStudent)
-        return { status: 1, message: 'Enregistré avec succes !' }
+        revalidatePath('/students')
+        return { status: 1, message: 'Enregistré avec succes XX !' }
     } catch (error) {
-        return { status: 0, message: 'Une erreur est survenue', error }
-        console.log(error)
+        return { status: 0, message: 'Une erreur est survenue TTT', error }
     }
 }

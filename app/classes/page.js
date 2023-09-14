@@ -5,7 +5,7 @@ import ClassesList from '@/components/ClassesList'
 
 export default async function page() {
     const classes = await getAllClasses()
-    console.log(classes)
+
     return (
         <>
             <div className='w-full h-full flex flex-col px-8'>

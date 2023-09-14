@@ -11,7 +11,7 @@ export default function useNewModal() {
 
     function closeModal() {
         setShowModal(false)
-        router.replace(pathName, { scroll: false })
+        router.push(pathName, { scroll: false })
     }
 
     useEffect(() => {

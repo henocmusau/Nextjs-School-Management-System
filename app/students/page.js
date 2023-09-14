@@ -3,6 +3,7 @@ import StudentsStats from '@/components/StudentsStats'
 import React from 'react'
 import { getAllStudents } from "@/actions/studentsActions"
 import NewStudentModal from '@/components/NewStudentModal'
+import { getAllClasses } from '@/actions/classActions'
 
 export const metadata = {
     title: 'Elèves - SchoolX',
@@ -10,6 +11,7 @@ export const metadata = {
 
 export default async function Students({ searchParams }) {
     const students = await getAllStudents()
+    const classes = await getAllClasses()
 
     return (
         <div className='w-full h-full flex flex-col px-8'>
@@ -18,7 +20,7 @@ export default async function Students({ searchParams }) {
                 <StudentsList students={JSON.parse(JSON.stringify(students))} />
                 : null
             }
-            <NewStudentModal />
+            <NewStudentModal classes={JSON.parse(JSON.stringify(classes))} />
         </div>
     )
 }

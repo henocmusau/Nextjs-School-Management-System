@@ -13,7 +13,7 @@ export default function ClassesList({ classes }) {
                 </thead>
                 <tbody>
                     {classes?.map(c => (
-                        <tr className='even:bg-white odd:bg-sky-50'>
+                        <tr key={c?.id} className='even:bg-white odd:bg-sky-50'>
                             <td className='py-2 pl-4 uppercase'>{c?.label}</td>
                         </tr>
                     ))}

@@ -6,6 +6,6 @@ import { Student } from "./students";
 classModel.hasMany(Student)
 Student.belongsTo(classModel)
 
-// schoolXDB.sync({ alter: true })
+// schoolXDB.sync({ force: true })
 
 export { classModel, Student }
