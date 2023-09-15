@@ -11,7 +11,7 @@ export async function getAllStudents() {
                 attributes: ['id', 'label']
             },
         })
-        return users
+        return JSON.parse(JSON.stringify(users))
     } catch (error) {
         return { message: 'Une erreur est survenue !' }
     }

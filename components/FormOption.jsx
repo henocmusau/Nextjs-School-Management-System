@@ -4,7 +4,7 @@ export default function FormOption({ label, id }) {
 
     return (
         <option
-            className='p-2 font-sans flex bg-white dark:bg-primaryDark h-full option hover:bg-blue-800'
+            className='selectOption'
             key={id}
             value={id}
         >

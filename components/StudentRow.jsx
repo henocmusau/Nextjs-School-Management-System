@@ -1,10 +1,10 @@
-import React from 'react'
+import TableRow from "./TableRow"
 
 export default function StudentRow({ student }) {
     return (
-        <tr className='even:bg-white odd:bg-sky-50 dark:even:bg-secondaryDark dark:odd:bg-primaryDark'>
+        <TableRow>
             <td className='py-2 pl-4 uppercase'>{`${student?.lastName} ${student?.middleName} ${student?.firstName}`}</td>
             <td>{student.class.label} </td>
-        </tr>
+        </TableRow>
     )
 }

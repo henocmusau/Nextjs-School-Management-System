@@ -6,9 +6,9 @@ import { revalidatePath } from 'next/cache'
 export async function getAllClasses() {
     try {
         const classes = await classModel.findAll()
-        return classes
+        return JSON.parse(JSON.stringify(classes))
     } catch (error) {
-        return { message: 'Une erreur est survenue !' }
+        return { message: 'Une erreur est survenue !', error }
     }
 }
 

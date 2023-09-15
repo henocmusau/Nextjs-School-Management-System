@@ -11,7 +11,7 @@ export default function LeftMenu() {
     const { theme, setTheme } = useContext(ThemeContext)
 
     return (
-        <section className='basis-1/6 flex flex-col px-6 shadow-xl dark:bg-secondaryDark dark:text-secondaryDark'>
+        <section className='basis-1/6 md:flex hidden flex-col px-6 shadow-xl dark:bg-secondaryDark/60 dark:text-secondaryDark'>
             <div className='flex justify-between w-full items-center'>
                 <Link href={'/'} className='text-2xl text-sky-500 font-bold ml-4 my-12'>SchoolX</Link>
                 {theme === 'dark' ?

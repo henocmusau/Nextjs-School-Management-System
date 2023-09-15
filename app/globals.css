@@ -26,3 +26,31 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+.layoutMain {
+  @apply dark:bg-primaryDark/40 max-h-screen overflow-y-auto w-screen overflow-x-hidden flex flex-1 min-h-full flex-col items-center justify-between;
+}
+
+.navLink {
+  @apply px-6 py-3 rounded-full cursor-pointer hover:bg-blue-100 dark:hover:bg-primaryDark duration-300 flex items-center;
+}
+
+.actionLink {
+  @apply flex items-center px-6 py-4 bg-slate-200 dark:bg-primaryDark hover:bg-slate-300 dark:hover:bg-slate-900/60 duration-300 mb-2 last:mb-0 rounded-2xl;
+}
+
+.selectOption {
+  @apply p-2 font-sans flex bg-white dark:bg-primaryDark h-full hover:bg-blue-800;
+}
+
+.select {
+  @apply bg-transparent dark:bg-secondaryDark p-2 rounded-lg border-2 border-gray-300 dark:border-secondary h-full px-4;
+}
+
+.borderColor {
+  @apply dark:border-purple-900 border-secondary;
+}
+
+.inputBorder {
+  @apply border border-gray-300 dark:border-secondary;
+}

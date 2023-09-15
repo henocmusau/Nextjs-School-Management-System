@@ -1,11 +1,13 @@
 import React from 'react'
 import SectionWrapper from './SectionWrapper'
+import TableRow from './TableRow'
+import SectionTitle from './SectionTitle'
 
 export default function ClassesList({ classes }) {
     return (
         <SectionWrapper>
-            <h2 className='pb-4 font-semibold text-lg ml-4 mb-4 border-b-4 border-slate-200'>Liste des élèves</h2>
-            <table className='text-left w-full border-collapse mt-4'>
+            <SectionTitle title='Liste des promotions' />
+            <table className='text-left w-full border-collapse mt-4 bg-transparent'>
                 <thead>
                     <tr>
                         <th className='pl-4 pb-2'>Label</th>
@@ -13,9 +15,9 @@ export default function ClassesList({ classes }) {
                 </thead>
                 <tbody>
                     {classes?.map(c => (
-                        <tr key={c?.id} className='even:bg-white odd:bg-sky-50 dark:even:bg-secondaryDark dark:odd:bg-primaryDark'>
+                        <TableRow key={c?.id}>
                             <td className='py-2 pl-4 uppercase'>{c?.label}</td>
-                        </tr>
+                        </TableRow>
                     ))}
                 </tbody>
             </table>

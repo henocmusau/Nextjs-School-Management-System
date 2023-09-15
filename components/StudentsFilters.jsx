@@ -2,28 +2,15 @@
 
 import React, { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { AiOutlineCheck as CheckIcon } from 'react-icons/ai'
 
-// import Listbox from './ListBox'
-
-const promotions = [
-    { id: 0, name: 'Tous' },
-    { id: 1, name: '1ère Primaire' },
-    { id: 2, name: '2ème Primaire' },
-    { id: 3, name: '3ème Primaire' },
-    { id: 4, name: '4ème Primaire' },
-    { id: 5, name: '5ème Primaire' },
-    { id: 6, name: '6ème Primaire' },
-]
-
-export default function StudentsFilters({ query, select, handleChange, handleSelectChange }) {
+export default function StudentsFilters({ classes: promotions, query, select, handleChange, handleSelectChange }) {
 
     return (
-        <section className='bg-secondary/30 dark:bg-secondaryDark relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
-            <div className='relative basis-5/12 mr-6'>
+        <section className='bg-secondary/30 dark:bg-secondaryDark/60 relative rounded-t-xl pt-8 px-4 md:px-12 mt-6 flex flex-col md:flex-row items-center'>
+            <div className='relative w-full md:basis-5/12 mr-0 md:mr-6 mb-2 md:mb-0'>
                 <input
                     type='text'
-                    className="border-2 w-full border-gray-300 dark:border-secondary bg-transparent h-10 px-8 rounded-lg text-medium focus:outline-none"
+                    className="inputBorder w-full bg-transparent h-10 px-8 rounded-lg text-medium focus:outline-none"
                     name='filterText'
                     value={query}
                     placeholder="Entrez le nom de l'élève que vous recherchez ici..."
@@ -40,15 +27,19 @@ export default function StudentsFilters({ query, select, handleChange, handleSel
             <select
                 value={select}
                 onChange={handleSelectChange}
-                className='bg-transparent dark:bg-secondaryDark p-2 rounded-lg border-2 border-gray-300 dark:border-secondary h-full px-4'
+                className='bg-transparent dark:bg-primaryDark inputBorder p-2 rounded-lg h-fit w-full md:w-min px-4'
             >
+                <option
+                    className='p-2 font-sans flex bg-white dark:bg-primaryDark h-full option hover:bg-blue-800'
+                    value='ALL'
+                >Tous</option>
                 {promotions.map((promotion) => (
                     <option
                         className='p-2 font-sans flex bg-white dark:bg-primaryDark h-full option hover:bg-blue-800'
                         key={promotion.id}
                         value={promotion.id}
                     >
-                        {promotion.name}
+                        {promotion.label}
                     </option>
                 ))}
             </select>

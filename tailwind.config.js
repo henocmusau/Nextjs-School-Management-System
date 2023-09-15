@@ -27,6 +27,7 @@ module.exports = {
       },
       backgroundImage: {
         'firstImg': 'url(../assets/bg.svg)',
+        // 'secondImg': 'url(../assets/sssurf.svg)',
         'secondImg': 'url(../assets/bg2.svg)',
       }
     },

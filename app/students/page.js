@@ -4,6 +4,7 @@ import React from 'react'
 import { getAllStudents } from "@/actions/studentsActions"
 import NewStudentModal from '@/components/NewStudentModal'
 import { getAllClasses } from '@/actions/classActions'
+import Link from 'next/link'
 
 export const metadata = {
     title: 'Elèves - SchoolX',
@@ -14,13 +15,13 @@ export default async function Students({ searchParams }) {
     const classes = await getAllClasses()
 
     return (
-        <div className='w-full h-full flex flex-col px-8'>
-            <StudentsStats />
+        <div className='w-full relative h-full flex flex-col px-3 md:px-8'>
+            <StudentsStats students={students} />
             {students && students.length > 0 ?
-                <StudentsList students={JSON.parse(JSON.stringify(students))} />
-                : null
+                <StudentsList students={students} classes={classes} />
+                : <p>Aucun (e) élève n'a été enregistré. <Link className='underline cursor-pointer font-semibold'>veuillez cliquer ici pour commencer l'enregistrement</Link> </p>
             }
-            <NewStudentModal classes={JSON.parse(JSON.stringify(classes))} />
+            <NewStudentModal classes={classes} />
         </div>
     )
 }
