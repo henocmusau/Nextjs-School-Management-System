@@ -6,7 +6,7 @@ import StudentsStatsItem from './StudentsStatsItem'
 export default function StudentsStats() {
 
     return (
-        <section className='flex w-full mt-6 bg-secondary dark:bg-secondaryDark shadow-lg justify-evenly text-center divide-x-2 divide-slate-200 rounded-3xl p-6'>
+        <section className='flex w-full mt-6 bg-secondary/30 dark:bg-secondaryDark shadow-lg justify-evenly text-center divide-x-2 divide-slate-200 dark:divide-secondary rounded-3xl p-6'>
             <StudentsStatsItem />
             <StudentsStatsItem />
             <StudentsStatsItem />

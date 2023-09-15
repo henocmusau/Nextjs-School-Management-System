@@ -20,8 +20,8 @@ module.exports = {
         'secondaryDark': '#cbd5e1'
       },
       backgroundColor: {
-        'primaryDark': '#181824',
-        'secondaryDark': '#25273c',
+        'secondaryDark': '#181824',
+        'primaryDark': '#25273c',
         'primary': '#f0f9ff',
         'secondary': '#fff'
       },

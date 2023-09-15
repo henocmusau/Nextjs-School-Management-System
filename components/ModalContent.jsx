@@ -30,19 +30,19 @@ export default function ModalContent({ isOpen, closeModal, children, id, title }
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 mt-16 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-secondaryDark  p-6 mt-16 text-left align-middle shadow-xl transition-all">
 
                                 <button
                                     onClick={closeModal}
-                                    className='absolute right-0 top-0 p-2 hover:bg-sky-100 duration-400 text-lg rounded-full'
+                                    className='absolute right-0 top-0 p-2 hover:bg-sky-100 dark:hover:bg-sky-100/20 transition duration-200 text-lg'
                                 >
                                     <AiOutlineClose />
                                 </button>
                                 <Dialog.Title
                                     as="h3"
-                                    className="text-lg mb-8 mt-2 p-2 font-medium bg-sky-100 text-center rounded-lg"
+                                    className="text-lg mb-8 mt-4 p-2 font-medium bg-sky-100 dark:bg-sky-100/20 text-center rounded-lg"
                                 >
-                                    {title ? title : 'Sélectionnez une action :'}
+                                    {title ? title : 'Sélectionnez une action'}
                                 </Dialog.Title>
 
                                 <div>

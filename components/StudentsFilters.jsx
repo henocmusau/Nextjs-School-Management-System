@@ -19,11 +19,11 @@ const promotions = [
 export default function StudentsFilters({ query, select, handleChange, handleSelectChange }) {
 
     return (
-        <section className='bg-secondary dark:bg-secondaryDark relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
+        <section className='bg-secondary/30 dark:bg-secondaryDark relative rounded-t-xl pt-8 px-12 mt-6 flex items-center'>
             <div className='relative basis-5/12 mr-6'>
                 <input
                     type='text'
-                    className="border-2 w-full border-gray-300 bg-transparent h-10 px-8 rounded-lg text-medium focus:outline-none"
+                    className="border-2 w-full border-gray-300 dark:border-secondary bg-transparent h-10 px-8 rounded-lg text-medium focus:outline-none"
                     name='filterText'
                     value={query}
                     placeholder="Entrez le nom de l'élève que vous recherchez ici..."
@@ -40,11 +40,11 @@ export default function StudentsFilters({ query, select, handleChange, handleSel
             <select
                 value={select}
                 onChange={handleSelectChange}
-                className='bg-transparent select rounded-lg border-2 border-gray-300 h-full px-4'
+                className='bg-transparent dark:bg-secondaryDark p-2 rounded-lg border-2 border-gray-300 dark:border-secondary h-full px-4'
             >
                 {promotions.map((promotion) => (
                     <option
-                        className='p-2 text-medium flex bg-white option hover:bg-sky-800'
+                        className='p-2 font-sans flex bg-white dark:bg-primaryDark h-full option hover:bg-blue-800'
                         key={promotion.id}
                         value={promotion.id}
                     >

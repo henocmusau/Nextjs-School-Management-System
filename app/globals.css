@@ -17,7 +17,7 @@
 }
 
 body {
-  color: @apply text-black;
+  /* @apply text-black dark:text-slate-400 hover:; */
   /* background-color: @apply bg-slate-200; */
   /* linear-gradient(
       to bottom,

@@ -6,6 +6,8 @@ import useNewModal from '@/hooks/useNewModal'
 import FormInput from './FormInput'
 import { createNewStudent } from '@/actions/studentsActions'
 import { getAllClasses } from '@/actions/classActions'
+import FormSelect from './FormSelect'
+import FormOption from './FormOption'
 
 export default function NewStudentModal({ classes }) {
     const [showModal, closeModal] = useNewModal()
@@ -23,21 +25,12 @@ export default function NewStudentModal({ classes }) {
                 <FormInput name='middleName' label='Post-nom' />
                 <FormInput name='firstName' label='Prénom' />
                 <label htmlFor='class' className='mt-4 ml-4'>Classe </label>
-                <select
-                    name='class'
-                    className='bg-transparent p-2 rounded-lg border-2 border-gray-300 h-full px-4'
-                // defaultValue={classes[0].id}
-                >
+                <FormSelect>
+
                     {classes.map((promotion) => (
-                        <option
-                            className='p-2 text-xl font-sans flex bg-white option hover:bg-blue-800'
-                            key={promotion.id}
-                            value={promotion.id}
-                        >
-                            {promotion.label}
-                        </option>
+                        <FormOption key={promotion?.id} label={promotion?.label} id={promotion?.id} />
                     ))}
-                </select>
+                </FormSelect>
                 <button type='submit' className='bg-blue-700 px-4 py-2 rounded-lg text-white mt-4 w-full'>Enregistrer</button>
             </form>
         </ModalContent>

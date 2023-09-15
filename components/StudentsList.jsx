@@ -12,7 +12,7 @@ export default function StudentsList({ students }) {
         <>
             <StudentsFilters query={query} select={select} handleChange={handleChange} handleSelectChange={handleSelectChange} />
             <SectionWrapper>
-                <h2 className='pb-4 font-semibold text-lg ml-4 mb-4 border-b-4 border-slate-200'>Liste des élèves</h2>
+                <h2 className='pb-4 font-semibold text-lg ml-4 mb-4 border-b-4 border-slate-200 dark:border-secondary'>Liste des élèves</h2>
                 <table className='text-left w-full border-collapse mt-4'>
                     <thead>
                         <tr>
