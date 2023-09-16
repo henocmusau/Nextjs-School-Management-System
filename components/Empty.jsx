@@ -9,9 +9,8 @@ export default function Empty({ link, text }) {
             <p className="text-secondary">{text}</p>
             <Link
                 href={'/' + link + '?new=1'}
-                className='cursor-pointer flex items-center duration-200 mt-4 font-semibold bg-blue-700 hover:bg-sky-600 py-2 px-6 rounded-lg text-primaryDark shadow-lg'
+                className='cursor-pointer duration-200 mt-4 font-semibold bg-blue-700 hover:bg-sky-600 py-2 px-6 rounded-lg text-primaryDark shadow-lg'
             >
-                <AiOutlineArrowDown className="text-primaryDark mr-3 animate-bounce" />
                 Debuter l'enregistrement
             </Link>
         </section>
