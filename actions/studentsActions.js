@@ -13,13 +13,13 @@ export async function getAllStudents() {
         })
         return JSON.parse(JSON.stringify(users))
     } catch (error) {
-        return { message: 'Une erreur est survenue !' }
+        return { error: true, message: 'Une erreur est survenue TTT', error: error }
     }
 }
 
 export async function createNewStudent(formData) {
     try {
-        const newStudent = await Student.create({
+        await Student.create({
             lastName: formData.get('lastName'),
             middleName: formData.get('middleName'),
             firstName: formData.get('firstName'),
@@ -28,6 +28,6 @@ export async function createNewStudent(formData) {
         revalidatePath('/students')
         return { status: 1, message: 'Enregistré avec succes XX !' }
     } catch (error) {
-        return { status: 0, message: 'Une erreur est survenue TTT', error: error }
+        return { error: true, message: 'Une erreur est survenue TTT' }
     }
 }
