@@ -28,6 +28,6 @@ export async function createNewStudent(formData) {
         revalidatePath('/students')
         return { status: 1, message: 'Enregistré avec succes XX !' }
     } catch (error) {
-        return { status: 0, message: 'Une erreur est survenue TTT', error }
+        return { status: 0, message: 'Une erreur est survenue TTT', error: error }
     }
 }

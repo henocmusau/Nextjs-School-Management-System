@@ -12,7 +12,10 @@ export default async function page() {
 
                 {classes && classes.length > 0 ?
                     <ClassesList classes={JSON.parse(JSON.stringify(classes))} />
-                    : null
+                    : <Empty
+                        text="Aucune classe n'a été enregistré. Cliquez sur le bouton ci-dessous pour débuter l'enregistrement."
+                        link='classes'
+                    />
                 }
                 <NewClassModal />
             </div>
