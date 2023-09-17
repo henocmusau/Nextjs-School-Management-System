@@ -4,6 +4,10 @@ import CoursesList from '@/components/CoursesList'
 import NewCourseModal from '@/components/NewCourseModal'
 import Empty from '@/components/Empty'
 
+export const metadata = {
+    title: 'Cours - SchoolX',
+}
+
 export default async function page() {
     const courses = await getAllCourses()
 
