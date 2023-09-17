@@ -2,6 +2,7 @@ import React from 'react'
 import { getAllClasses } from '@/actions/classActions'
 import NewClassModal from '@/components/NewClassModal'
 import ClassesList from '@/components/ClassesList'
+import Empty from '@/components/Empty'
 
 export default async function page() {
     const classes = await getAllClasses()

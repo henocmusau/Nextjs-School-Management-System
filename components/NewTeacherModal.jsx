@@ -24,7 +24,7 @@ export default function NewStudentModal({ classes }) {
                 <FormInput name='lastName' label='Nom' />
                 <FormInput name='middleName' label='Post-nom' />
                 <FormInput name='firstName' label='Prénom' />
-                <SubmitButton text='Enregistrer' />
+                <SubmitButton />
             </form>
         </ModalContent>
     )
