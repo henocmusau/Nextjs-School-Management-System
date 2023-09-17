@@ -10,7 +10,7 @@ export const metadata = {
     title: 'Elèves - SchoolX',
 }
 
-export default async function Students({ searchParams }) {
+export default async function Students() {
     const students = await getAllStudents()
     const classes = await getAllClasses()
 

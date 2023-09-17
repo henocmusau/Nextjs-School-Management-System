@@ -13,7 +13,20 @@ export async function getAllStudents() {
         })
         return JSON.parse(JSON.stringify(users))
     } catch (error) {
-        return { error: true, message: 'Une erreur est survenue TTT', error: error }
+        return { error: true, message: 'Une erreur est survenue TTT' }
+    }
+}
+
+export async function getStudentsPerClass(id) {
+    try {
+        const data = await Student.findAll({
+            where: {
+                classId: id
+            }
+        })
+        return JSON.parse(JSON.stringify(data))
+    } catch (error) {
+        return { error: true, message: 'Une erreur est survenue TTT' }
     }
 }
 
