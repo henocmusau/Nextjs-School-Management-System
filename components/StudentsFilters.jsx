@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 
 export default function StudentsFilters({ classes: promotions, query, select, handleChange, handleSelectChange }) {
@@ -24,7 +24,7 @@ export default function StudentsFilters({ classes: promotions, query, select, ha
                     <AiOutlineSearch className='text-2xl' />
                 </button>
             </div>
-            <select
+            {promotions ? <select
                 value={select}
                 onChange={handleSelectChange}
                 className='bg-transparent dark:bg-primaryDark inputBorder p-2 rounded-lg h-fit w-full md:w-min px-4'
@@ -42,7 +42,7 @@ export default function StudentsFilters({ classes: promotions, query, select, ha
                         {promotion.label}
                     </option>
                 ))}
-            </select>
+            </select> : null}
             {/* <Listbox /> */}
         </section>
     )

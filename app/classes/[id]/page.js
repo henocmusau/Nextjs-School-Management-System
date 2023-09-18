@@ -1,12 +1,20 @@
 import { getStudentsPerClass } from '@/actions/studentsActions'
+import Empty from '@/components/Empty'
+import StudentsList from '@/components/StudentsList'
 import React from 'react'
 
 export default async function page({ params }) {
-    const datas = await getStudentsPerClass(params.id)
-    console.log(datas)
+    const students = await getStudentsPerClass(params.id)
+
     return (
         <div className='w-full relative h-full flex flex-col px-3 md:px-8'>
-            <p className='text-3xl font-extrabold'>Page N° : {` ${params.id}`} </p>
+            {students && students.length > 0 ?
+                <StudentsList students={students} isClass={true} />
+                : <Empty
+                    text="Aucun (e) élève n'a été enregistré pour cette classe. Cliquez sur le bouton ci-dessous pour débuter l'enregistrement."
+                    link='students'
+                />
+            }
         </div>
     )
 }

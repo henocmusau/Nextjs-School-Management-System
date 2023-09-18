@@ -22,7 +22,12 @@ export async function getStudentsPerClass(id) {
         const data = await Student.findAll({
             where: {
                 classId: id
-            }
+            },
+            include: {
+                model: classModel,
+                attributes: ['id', 'label']
+            },
+            order: [['lastName', 'ASC'], ['middleName', 'ASC']]
         })
         return JSON.parse(JSON.stringify(data))
     } catch (error) {
