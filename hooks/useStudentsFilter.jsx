@@ -2,6 +2,7 @@
 import React, { useCallback, useState } from 'react'
 
 export default function useStudentsFilter({ students }) {
+    const [datas, setDatas] = useState(students)
     const [select, setSelect] = useState(0)
     const [query, setQuery] = useState('')
 
@@ -13,9 +14,16 @@ export default function useStudentsFilter({ students }) {
         setSelect(e.target.value)
     }
 
-    const filteredStudents = students?.filter((student) => {
-        return student?.fullName.toLowerCase().includes(query.toLowerCase())
-            || student?.id.toString().toLowerCase().includes(query.toLowerCase())
+    const filteredStudents = datas?.filter((student) => {
+        const studentFullname = student?.fullName.toLowerCase()
+        const studentId = student?.id.toString()
+
+        if (select == 0) {
+            return studentFullname.includes(query.toLowerCase())
+                || studentId.toLowerCase().includes(query.toLowerCase())
+        }
+        return studentFullname.includes(query.toLowerCase()) && student?.class.id == select
+            || studentId.toLowerCase().includes(query.toLowerCase()) && student?.class.id == select
     })
 
     return [query, select, handleChange, handleSelectChange, filteredStudents]

@@ -31,7 +31,7 @@ export default function StudentsFilters({ classes: promotions, query, select, ha
             >
                 <option
                     className='p-2 font-sans flex bg-white dark:bg-primaryDark h-full option hover:bg-blue-800'
-                    value='ALL'
+                    value={0}
                 >Tous</option>
                 {promotions.map((promotion) => (
                     <option
