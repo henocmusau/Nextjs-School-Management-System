@@ -13,6 +13,7 @@ export default function NewStudentModal({ classes }) {
     const [showModal, closeModal] = useNewModal()
 
     async function onCreate(formData) {
+        if (formData.get('class').trim().length <= 0) return
         const message = await createNewStudent(formData)
         if (message.error) return
         closeModal()
