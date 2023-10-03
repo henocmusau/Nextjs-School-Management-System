@@ -9,7 +9,8 @@ const schoolXDB = new Sequelize(
         host: process.env.POSTGRES_HOST,
         port: process.env.DB_PORT,
         dialect: 'postgres',
-        dialectModule: pg
+        dialectModule: pg,
+        // ssl: true
     }
 )
 

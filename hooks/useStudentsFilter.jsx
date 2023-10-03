@@ -2,7 +2,6 @@
 import React, { useCallback, useState } from 'react'
 
 export default function useStudentsFilter({ students }) {
-    const [datas, setDatas] = useState(students)
     const [select, setSelect] = useState(0)
     const [query, setQuery] = useState('')
 
@@ -14,7 +13,7 @@ export default function useStudentsFilter({ students }) {
         setSelect(e.target.value)
     }
 
-    const filteredStudents = datas?.filter((student) => {
+    const filteredStudents = students?.filter((student) => {
         const studentFullname = student?.fullName.toLowerCase()
         const studentId = student?.id.toString()
 

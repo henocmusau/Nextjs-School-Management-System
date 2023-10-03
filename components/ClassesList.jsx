@@ -6,7 +6,9 @@ import SectionTitle from './SectionTitle'
 export default function ClassesList({ classes }) {
     return (
         <SectionWrapper>
-            <SectionTitle title='Liste des promotions' />
+            <div>
+                <SectionTitle title='Liste des promotions' />
+            </div>
             <table className='text-left w-full border-collapse mt-4 bg-transparent'>
                 <thead>
                     <tr>
