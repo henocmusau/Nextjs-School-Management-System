@@ -1,14 +1,13 @@
 'use client'
 
-import { useContext } from 'react'
 import Link from 'next/link'
 import { navLinks } from '@/utils/design'
 import NavLink from './NavLink'
 import { PiSunBold, PiMoonBold } from 'react-icons/pi'
-import ThemeContext from '@/utils/context/theme'
+import { useThemeContext } from '@/utils/context/ThemeProvider'
 
 export default function LeftMenu() {
-    const { theme, setTheme } = useContext(ThemeContext)
+    const { theme, toggleTheme } = useThemeContext()
 
     return (
         <section className='basis-1/6 md:flex hidden flex-col px-6 shadow-xl dark:bg-secondaryDark/60 dark:text-secondaryDark'>
@@ -16,11 +15,11 @@ export default function LeftMenu() {
                 <Link href={'/'} className='text-2xl text-sky-500 font-bold ml-4 my-12'>SchoolX</Link>
                 {theme === 'dark' ?
                     <PiSunBold
-                        onClick={() => setTheme('light')}
+                        onClick={toggleTheme}
                         className='cursor-pointer p-4 h-12 w-12 rounded-full dark:hover:bg-gray-700 dark:bg-primaryDark bg-primary hover:bg-sky-200 duration-200 text-primary dark:text-secondaryDark'
                     />
                     : <PiMoonBold
-                        onClick={() => setTheme('dark')}
+                        onClick={toggleTheme}
                         className='cursor-pointer p-4 h-12 w-12 rounded-full dark:hover:bg-gray-700 dark:bg-primaryDark bg-primary hover:bg-sky-200 duration-200 text-primary dark:text-secondaryDark'
                     />}
             </div>

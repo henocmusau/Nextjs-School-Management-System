@@ -2,7 +2,7 @@ import LeftMenu from '@/components/LeftMenu'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
-import { ThemeProvider } from '@/utils/context/theme'
+import { ThemeProvider } from '@/utils/context/ThemeProvider'
 
 import ModalWrapper from '@/components/ModalWrapper'
 
