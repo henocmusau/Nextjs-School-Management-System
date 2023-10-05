@@ -36,7 +36,9 @@ export async function getStudentById(id) {
         return JSON.stringify(data)
 
     } catch (error) {
-        throw new Error(error)
+        redirect('/not-found')
+        // return JSON.stringify(error)
+        // throw new Error(error)
         // return new NextResponse({ status: 500 })
     }
 }
