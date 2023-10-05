@@ -1,6 +1,8 @@
 'use server'
 import { Student, classModel } from '@/models/relations'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+import { NextResponse } from 'next/server'
 
 export async function getAllStudents() {
     try {
@@ -11,9 +13,31 @@ export async function getAllStudents() {
                 attributes: ['id', 'label']
             },
         })
+
         return JSON.parse(JSON.stringify(users))
+
     } catch (error) {
-        return { error: true, message: 'Une erreur est survenue TTT' }
+        throw new Error('une erreur est survenue == getAllStudents')
+    }
+}
+
+export async function getStudentById(id) {
+    try {
+        const data = await Student.findOne({
+            where: {
+                id: parseInt(id, 10)
+            }
+        })
+
+        if (data === null) {
+            throw new Error('Aucune donnée correspondante')
+        }
+        // console.log(data)
+        return JSON.stringify(data)
+
+    } catch (error) {
+        throw new Error(error)
+        // return new NextResponse({ status: 500 })
     }
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
-import useTheme from '@/utils/context/useTheme';
-import { createContext, useContext } from 'react';
+import { useState, createContext, useEffect, useContext } from 'react';
+import useTheme from './useTheme';
 
 const getInitialTheme = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
@@ -25,8 +25,8 @@ export function useThemeContext() {
     return useContext(ThemeContext)
 }
 
-export const ThemeProvider = ({ children }) => {
-    const [theme, toggleTheme] = useTheme(getInitialTheme)
+export const ThemeProvider = ({ initialTheme, children }) => {
+    const [theme, toggleTheme] = useTheme({ getInitialTheme, initialTheme })
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>

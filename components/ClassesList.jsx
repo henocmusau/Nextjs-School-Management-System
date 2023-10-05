@@ -2,6 +2,7 @@ import React from 'react'
 import SectionWrapper from './SectionWrapper'
 import TableRow from './TableRow'
 import SectionTitle from './SectionTitle'
+import Link from 'next/link'
 
 export default function ClassesList({ classes }) {
     return (
@@ -18,7 +19,14 @@ export default function ClassesList({ classes }) {
                 <tbody>
                     {classes?.map(c => (
                         <TableRow key={c?.id}>
-                            <td className='py-2 pl-4 uppercase'>{c?.label}</td>
+                            <td className='py-2 pl-4 uppercase'>
+                                <Link
+                                    href={`/classes/${c.id}`}
+                                    className="cursor-pointer h-full w-full hover:text-secondary duration-200"
+                                >
+                                    {c.label}
+                                </Link>
+                            </td>
                         </TableRow>
                     ))}
                 </tbody>

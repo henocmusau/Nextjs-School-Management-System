@@ -1,7 +1,13 @@
+import { getStudentById } from '@/actions/studentsActions'
 import React from 'react'
 
-export default function page({ params }) {
+export default async function page({ params }) {
+    const student = JSON.parse(JSON.stringify(await getStudentById(params.id)))
+
     return (
-        <div>Student ID : {params.id} </div>
+        <div>
+            {/* Student ID : {params.id} */}
+            <div>{student} </div>
+        </div>
     )
 }
