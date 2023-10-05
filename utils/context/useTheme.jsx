@@ -2,9 +2,7 @@
 import { useState, useEffect } from 'react'
 
 export default function useTheme({ getInitialTheme, initialTheme }) {
-
     const [theme, setTheme] = useState(getInitialTheme);
-    console.log(initialTheme)
 
     const rawSetTheme = (rawTheme) => {
         const root = window.document.documentElement;

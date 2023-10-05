@@ -1,7 +1,7 @@
+import React from 'react'
 import { getStudentsPerClass } from '@/actions/studentsActions'
 import Empty from '@/components/Empty'
 import StudentsList from '@/components/StudentsList'
-import React from 'react'
 
 export default async function page({ params }) {
     const students = await getStudentsPerClass(params.id)

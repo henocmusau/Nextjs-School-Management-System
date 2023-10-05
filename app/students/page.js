@@ -12,7 +12,6 @@ export const metadata = {
 
 export default async function Students() {
     const students = await getAllStudents()
-
     const classes = await getAllClasses()
 
     return (
