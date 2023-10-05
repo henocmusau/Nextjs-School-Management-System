@@ -3,6 +3,7 @@ import SectionWrapper from './SectionWrapper'
 import TableRow from './TableRow'
 import SectionTitle from './SectionTitle'
 import Link from 'next/link'
+import RedirectLink from './RedirectLink'
 
 export default function ClassesList({ classes }) {
     return (
@@ -20,12 +21,7 @@ export default function ClassesList({ classes }) {
                     {classes?.map(c => (
                         <TableRow key={c?.id}>
                             <td className='py-2 pl-4 uppercase'>
-                                <Link
-                                    href={`/classes/${c.id}`}
-                                    className="cursor-pointer h-full w-full hover:text-secondary duration-200"
-                                >
-                                    {c.label}
-                                </Link>
+                                <RedirectLink id={c.id} label={c.label} />
                             </td>
                         </TableRow>
                     ))}
