@@ -14,12 +14,13 @@ export default function StudentsList({ students, classes, isClass }) {
         <>
             <StudentsFilters
                 classes={!isClass ? classes : null}
+                isClass={isClass}
                 query={query}
                 select={select}
                 handleChange={handleChange}
                 handleSelectChange={handleSelectChange}
             />
-            <SectionWrapper>
+            <SectionWrapper isClass={isClass}>
                 <SectionTitle title={classLabel} />
                 <table className='text-left w-full border-collapse mt-4'>
                     <thead>

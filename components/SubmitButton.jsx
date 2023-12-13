@@ -1,5 +1,6 @@
 'use client'
-import React, { experimental_useFormStatus as useFormStatus } from 'react-dom'
+import React from 'react'
+import { useFormStatus } from 'react-dom'
 
 export default function SubmitButton({ text }) {
   const { pending } = useFormStatus()

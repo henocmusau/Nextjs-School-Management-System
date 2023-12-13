@@ -14,7 +14,13 @@ export default function StudentRow({ student, isClass }) {
                 </Link>
             </td>
             {!isClass ? <td>
-                <RedirectLink id={student.class.id} label={student.class.label} />
+                {/* <RedirectLink id={student.class.id} label={student.class.label} /> */}
+                <Link
+                    href={`/classes/${student.class.id}`}
+                    className="cursor-pointer h-full w-full hover:text-secondary duration-200"
+                >
+                    {student.class.label}
+                </Link>
             </td> : null}
             <td className="items-start">
                 <DropdownMenu />
