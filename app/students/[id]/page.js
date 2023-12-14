@@ -1,8 +1,11 @@
-import { getStudentById } from '@/actions/studentsActions'
+import { getAllStudents, getStudentById } from '@/actions/studentsActions'
+import { replaceSpecialChars, studentLink } from '@/utils/functions'
 import React from 'react'
 
 export default async function page({ params }) {
-    const student = JSON.parse(JSON.stringify(await getStudentById(params.id)))
+    const id = params.id.split('-')
+
+    const student = JSON.parse(JSON.stringify(await getStudentById(id[id.length - 1])))
 
     return (
         <div>
@@ -10,4 +13,12 @@ export default async function page({ params }) {
             <div>{student} </div>
         </div>
     )
+}
+
+export async function generateStaticParams() {
+    const students = await getAllStudents()
+
+    return students.map((student) => ({
+        id: studentLink(student)
+    }))
 }
