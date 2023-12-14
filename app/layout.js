@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className={`${inter.className} bg-firstImg dark:bg-primaryDark dark:bg-secondImg bg-no-repeat bg-cover bg-top bg-fixed flex relative min-h-screen flex-wrap text-primary dark:text-secondaryDark overflow-hidden`}>
+        <body className={`${inter?.className} bg-firstImg dark:bg-primaryDark dark:bg-secondImg bg-no-repeat bg-cover bg-top bg-fixed flex relative min-h-screen flex-wrap text-primary dark:text-secondaryDark overflow-hidden`}>
           <LeftMenu />
           <main className="layoutMain">
             {children}

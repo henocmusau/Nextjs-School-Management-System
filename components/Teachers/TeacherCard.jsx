@@ -24,8 +24,8 @@ export default function TeacherCard({ teacher }) {
                 />
             </div>
             <div className='ml-4'>
-                <h2 className='font-semibold text-xl uppercase'>
-                    {teacher.fullName}
+                <h2 className='font-semibold text-xl capitalize'>
+                    {teacher?.fullName.toLowerCase()}
                 </h2>
                 <p className='text-secondary'>Professeur de Microbiologie et Mathématiques</p>
             </div>
