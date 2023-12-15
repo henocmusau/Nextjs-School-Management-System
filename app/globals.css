@@ -54,3 +54,7 @@ body {
 .inputBorder {
   @apply border border-gray-300 dark:border-secondary;
 }
+
+.loadingBg {
+  @apply bg-slate-200 dark:bg-secondaryDark/60 animate-pulse;
+}
